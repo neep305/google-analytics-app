@@ -128,4 +128,5 @@ dist/
 tmp/
 temp/
 
+credentials.json
 # End of https://www.toptal.com/developers/gitignore/api/node
