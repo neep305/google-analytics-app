@@ -1,0 +1,15 @@
+{
+  "name": "google-analytics-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Nam",
+  "license": "ISC",
+  "dependencies": {
+    "@google-analytics/data": "^2.4.0",
+    "dotenv": "^8.2.0"
+  }
+}
