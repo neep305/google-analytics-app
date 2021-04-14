@@ -32,7 +32,21 @@
         {
           name: 'activeUsers',
         },
+        {
+          name: 'newUsers',
+        },
+        {
+          name: 'totalRevenue',
+        },
       ],
+      dimensionFilter: {
+        filter: {
+          fieldName: 'countryId',
+          stringFilter: {
+            value: 'Korea'
+          }
+        }
+      }
     });
 
     console.log('Report result:');
