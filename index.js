@@ -16,44 +16,29 @@
   async function runReport() {
     const [response] = await analyticsDataClient.runReport({
       property: `properties/${propertyId}`,
-      dateRanges: [{ "startDate": "7daysAgo", "endDate": "yesterday" }],
+      dateRanges: [{ "startDate": "28daysAgo", "endDate": "yesterday" }],
+      dateRanges: [
+        {
+          startDate: '2021-07-01',
+          endDate: 'today',
+        },
+      ],
       dimensions: [
         {
-            name: "country"
-        },
-        {
-            name: "region"
-        },
-        {
-            name: 'city',
+          name: 'city',
         },
       ],
       metrics: [
         {
           name: 'activeUsers',
         },
-        {
-          name: 'newUsers',
-        },
-        {
-          name: 'totalRevenue',
-        },
       ],
-      dimensionFilter: {
-        filter: {
-          fieldName: 'countryId',
-          stringFilter: {
-            value: 'Korea'
-          }
-        }
-      }
     });
 
     console.log('Report result:');
-    // response.rows.forEach(row => {
-    //   console.log(row.dimensionValues[0], row.metricValues[0]);
-    // });
-    console.log(JSON.stringify(response.rows));
+    response.rows.forEach(row => {
+      console.log(row.dimensionValues[0], row.metricValues[0]);
+    });
   }
 
   runReport();
